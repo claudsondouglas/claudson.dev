@@ -1,4 +1,15 @@
-import Image from 'next/image'
+import { Metadata } from "next"
+
+
+export const metadata: Metadata = {
+  title: 'Claudson',
+  description: 'A 3 anos resolvendo problemas através de códigos criativos e eficientes',
+  openGraph: {
+    title: "Portifólio",
+    description: "A 3 anos resolvendo problemas através de códigos criativos e eficientes",
+    siteName: "claudson.dev"
+  }
+}
 
 export default function Home() {
   return (
