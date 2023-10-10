@@ -39,7 +39,7 @@ export default function Home() {
       </header>
       <Marquee />
       <main className="">
-        <Section id="sobre" spaceBottom={false}>
+        <Section id="sobre" container={true} spaceBottom={false} paddingY={false}>
           <div className='grid lg:grid-cols-3 lg:gap-10'>
             <div className='lg:col-span-3 bg-accent-neutral p-10 md:p-20'>
               <div>
@@ -100,7 +100,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='text-center mt-7'>
+          <div className='text-center mt-7 px-10'>
             <a href='https://www.linkedin.com/in/claudson-p-81813a122/' className='mx-auto'>Veja mais sobre formações, certificações e experiências no linkedin</a>
           </div>
         </Section>
@@ -163,7 +163,7 @@ export default function Home() {
 
         <Section id="contato" container={true} background="accent-neutral">
           <div className='flex flex-col md:flex-row gap-10 justify-between max-w-screen-xl mx-auto items-center text-gray-500'>
-            <h2 className='text-4xl font-bold mb-3 max-w-sm text-gray-700'> Precisa de algo? Fala comigo! 😉</h2>
+            <h2 className='text-4xl font-bold mb-3 max-w-sm text-gray-700 text-center md:text-left'> Precisa de algo? Fala comigo! 😉</h2>
             <div className='flex flex-col text-center'>
               <a className='bg-accent text-white inline-block px-14 lg:px-24 py-4 rounded' href="https://wa.me/558491065838">
                 Falar no whatsapp
