@@ -1,3 +1,4 @@
+import Section from "@/components/Section"
 import { Metadata } from "next"
 
 
@@ -35,8 +36,9 @@ export default function Home() {
           <img src="/header.png" className='w-full min-w-[1000px] object-cover object-center mix-blend-multiply' />
         </div>
       </header>
+
       <main className="">
-        <section className='max-w-screen-xl mx-auto lg:mt-20'>
+        <Section id="sobre" spaceBottom={false}>
           <div className='grid lg:grid-cols-3 lg:gap-10'>
             <div className='lg:col-span-3 bg-accent-neutral p-10 md:p-20'>
               <h2 className='text-4xl font-bold mb-3'>Desenvolvedor</h2>
@@ -68,9 +70,9 @@ export default function Home() {
           <div className='text-center mt-7'>
             <a href='https://www.linkedin.com/in/claudson-p-81813a122/' className='mx-auto'>Veja mais sobre formações, certificações e experiências no linkedin</a>
           </div>
-        </section>
+        </Section>
 
-        <section className='max-w-screen-xl mx-auto lg:mt-20 px-10 md:px-20 xl:px-0 py-20 pb-0'>
+        <Section id="trabalhos" spaceBottom={false}>
           <h2 className='text-4xl font-bold mb-3'>Trabalhos</h2>
 
           <div className='grid lg:grid-cols-3 gap-10'>
@@ -104,12 +106,10 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </Section>
 
-        </section>
-
-        <section className='max-w-screen-xl mx-auto lg:mt-20 px-10 md:px-20 xl:px-0 py-20 pb-0'>
+        <Section id="projetos" spaceBottom={false}>
           <h2 className='text-4xl font-bold mb-3'>Projetos pessoais</h2>
-
           <div className='grid lg:grid-cols-3 gap-10'>
             <div className='flex flex-col justify-between gap-5'>
               <div>
@@ -126,9 +126,9 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </section>
+        </Section>
 
-        <section className='bg-accent-neutral mt-20 px-10 md:px-20 xl:px-0 py-20'>
+        <Section id="contato" container={true} background="accent-neutral">
           <div className='flex flex-col md:flex-row gap-10 justify-between max-w-screen-xl mx-auto items-center text-gray-500'>
             <h2 className='text-4xl font-bold mb-3 max-w-sm text-gray-700'> Precisa de algo? Fala comigo! 😉</h2>
             <div className='flex flex-col text-center'>
@@ -141,7 +141,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </section>
+        </Section>
       </main>
     </>
   )
