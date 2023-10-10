@@ -43,7 +43,7 @@ export default function RootLayout({
                 <footer className='bg-body-dark text-primary'>
                     <div className='max-w-screen-xl mx-auto flex flex-col-reverse sm:flex-row px-10 sm:px-0 py-10 justify-between items-center gap-10'>
                         <div className='text-xs leading-5 max-w-[600px]'>
-                            Prototipado pelo <a href="">Figma</a> e codado no <a href="">Visual Studio Code</a> por mim mesmo. Construído com <a href="">Next.js</a> e <a href="">Tailwind CSS</a>, <a href="">hospedado na Vercel</a>. Todo o texto é definido na <a href="">fonte Inter</a>.
+                            Prototipado pelo <a href="https://figma.com/">Figma</a> e codado no <a href="https://code.visualstudio.com/">Visual Studio Code</a> por mim mesmo. Construído com <a href="https://nextjs.com/">Next.js</a> e <a href="https://tailwindcss.com/">Tailwind CSS</a>, hospedado na <a href="https://vercel.com/">Vercel</a>. Todo o texto é definido na <a href="https://fonts.google.com/specimen/Inter">fonte Inter</a>.
                         </div>
                         <div>
                             <SocialList />

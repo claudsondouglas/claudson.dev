@@ -1,3 +1,4 @@
+import Marquee from "@/components/Marquee"
 import Section from "@/components/Section"
 import { Metadata } from "next"
 
@@ -36,7 +37,7 @@ export default function Home() {
           <img src="/header.png" className='w-full min-w-[1000px] object-cover object-center mix-blend-multiply' />
         </div>
       </header>
-
+      <Marquee />
       <main className="">
         <Section id="sobre" spaceBottom={false}>
           <div className='grid lg:grid-cols-3 lg:gap-10'>
