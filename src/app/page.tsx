@@ -41,30 +41,62 @@ export default function Home() {
         <Section id="sobre" spaceBottom={false}>
           <div className='grid lg:grid-cols-3 lg:gap-10'>
             <div className='lg:col-span-3 bg-accent-neutral p-10 md:p-20'>
-              <h2 className='text-4xl font-bold mb-3'>Desenvolvedor</h2>
-              <p className='lg:text-lg text-body'>
-                Sou um profissional versátil na área de desenvolvimento, atuando como desenvolvedor Full-Stack e também desempenhando papéis cruciais em DevOps, experiência do usuário (UX) e análise de dados. Meu compromisso com a qualidade é uma parte fundamental do meu trabalho, garantindo que todos os projetos atendam aos mais altos padrões.
+              <div>
+                <h2 className='text-4xl font-bold mb-3'>Desenvolvedor</h2>
+                <p className='lg:text-lg text-body'>
+                  Sou um profissional versátil na área de desenvolvimento, atuando como desenvolvedor Full-Stack e também desempenhando papéis cruciais em DevOps, experiência do usuário (UX) e análise de dados. Meu compromisso com a qualidade é uma parte fundamental do meu trabalho, garantindo que todos os projetos atendam aos mais altos padrões.
 
-                Faço parte da equipe da Websocorro, uma empresa líder que gera resultados milionários no mundo do marketing. A minha estratégia para assegurar a excelência em sites, landing pages e sistemas é baseada na utilização de tecnologias de ponta e na aplicação das melhores práticas, abrangendo testes, padrões de projeto, versionamento e arquitetura.
-              </p>
+                  Faço parte da equipe da Websocorro, uma empresa líder que gera resultados milionários no mundo do marketing. A minha estratégia para assegurar a excelência em sites, landing pages e sistemas é baseada na utilização de tecnologias de ponta e na aplicação das melhores práticas, abrangendo testes, padrões de projeto, versionamento e arquitetura.
+                </p>
+              </div>
+
+              <div className="flex gap-2 mt-10">
+                <img src="/icons/javascript.svg" className="w-[40px]" />
+                <img src="/icons/nativo-de-reagir.svg" className="w-[40px]" />
+                <img src="/icons/next.js.svg" className="w-[40px]" />
+                <img src="/icons/tailwindcss.svg" className="w-[40px]" />
+                <img src="/icons/typescript.svg" className="w-[40px]" />
+              </div>
             </div>
-            <div className='bg-primary-lightness p-10 md:p-20 lg:p-10'>
-              <h3 className='text-2xl font-bold mb-2'>UX & UI</h3>
-              <p className='text-body'>
-                Meu interesse surgiu como uma ferramenta valiosa para aprimorar a qualidade de projetos e otimizar as interfaces de websites e sistemas, buscando proporcionar uma experiência superior aos usuários.
-              </p>
+            <div className='bg-primary-lightness p-10 md:p-20 lg:p-10 flex flex-col justify-between'>
+              <div>
+                <h3 className='text-2xl font-bold mb-2'>UX & UI</h3>
+                <p className='text-body'>
+                  Meu interesse surgiu como uma ferramenta valiosa para aprimorar a qualidade de projetos e otimizar as interfaces de websites e sistemas, buscando proporcionar uma experiência superior aos usuários.
+                </p>
+              </div>
+
+              <div className="flex gap-2 mt-10">
+                <img src="/icons/figma.svg" className="w-[40px]" />
+              </div>
             </div>
-            <div className='bg-primary-lightness p-10 md:p-20 lg:p-10'>
-              <h3 className='text-2xl font-bold mb-2'>Cientista de dados</h3>
-              <p className='text-body'>
-                Minha trajetória profissional envolve a análise de dados e a criação de gráficos para projetos, e essa experiência diária consolidou meu interesse na área.
-              </p>
+            <div className='bg-primary-lightness p-10 md:p-20 lg:p-10 flex flex-col justify-between'>
+              <div>
+                <h3 className='text-2xl font-bold mb-2'>Cientista de dados</h3>
+                <p className='text-body'>
+                  Minha trajetória profissional envolve a análise de dados e a criação de gráficos para projetos, e essa experiência diária consolidou meu interesse na área.
+                </p>
+              </div>
+              <div className="flex gap-2 mt-10">
+                <img src="/icons/python.svg" className="w-[40px]" />
+                <img src="/icons/pandas.svg" className="w-[40px]" />
+              </div>
             </div>
-            <div className='bg-primary-lightness p-10 md:p-20 lg:p-10'>
-              <h3 className='text-2xl font-bold mb-2'>DevOps</h3>
-              <p className='text-body'>
-                Optei por utilizar o Linux como meu sistema operacional por um extenso período, o que me permitiu ganhar experiência no sistema de servidores. Isso reforçou minha competência na gestão de servidores.
-              </p>
+            <div className='bg-primary-lightness p-10 md:p-20 lg:p-10 flex flex-col justify-between'>
+              <div>
+                <h3 className='text-2xl font-bold mb-2'>DevOps</h3>
+                <p className='text-body'>
+                  Optei por utilizar o Linux como meu sistema operacional por um extenso período, o que me permitiu ganhar experiência no sistema de servidores. Isso reforçou minha competência na gestão de servidores.
+                </p>
+              </div>
+
+              <div className="flex gap-2 mt-10">
+                <img src="/icons/linux.svg" className="w-[40px]" />
+                <img src="/icons/ec2.svg" className="w-[40px]" />
+                <img src="/icons/nginx.svg" className="w-[40px]" />
+                <img src="/icons/git.svg" className="w-[40px]" />
+                <img src="/icons/pm2.svg" className="w-[40px]" />
+              </div>
             </div>
           </div>
           <div className='text-center mt-7'>
@@ -108,7 +140,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="projetos" spaceBottom={false}>
+        <Section id="projetos" spaceBottom={true}>
           <h2 className='text-4xl font-bold mb-3'>Projetos pessoais</h2>
           <div className='grid lg:grid-cols-3 gap-10'>
             <div className='flex flex-col justify-between gap-5'>
