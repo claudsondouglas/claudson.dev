@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <header className='h-[80vh] bg-primary flex flex-col relative'>
+      <header className='h-[90vh] bg-primary flex flex-col relative'>
         <div className='max-w-screen-xl mx-auto h-full flex justify-center items-center w-full relative z-20'>
           <div className='text-center px-10 lg:px-0'>
             <span className='text-primary-darkmore block'>console.log</span>
