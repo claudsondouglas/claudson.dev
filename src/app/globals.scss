@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply text-accent;
+}
+
+#navbar {
+  a {
+    @apply text-body-dark;
+  }
+
+  & ul li a {
+    transition: .3s;
+  }
+
+  & ul:has(li a:hover) li a:not(:hover) {
+    opacity: .4;
+  }
+}
