@@ -136,8 +136,8 @@ export default function Home() {
                 Falar no whatsapp
               </a>
               ou
-              <a href=''>
-                Me manda um email
+              <a href='mailto:contato@claudson.dev'>
+                Me manda um email <b>contato@claudson.dev</b>
               </a>
             </div>
           </div>
