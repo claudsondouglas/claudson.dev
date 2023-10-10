@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const variants = tv({
-    base: "lg:mt-20 px-10 md:px-20 xl:px-0 py-20",
+    base: "px-10 md:px-20 xl:px-0 py-20",
     variants: {
         spaceBottom: {
             false: "pb-0"
