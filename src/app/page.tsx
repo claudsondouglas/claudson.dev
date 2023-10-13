@@ -28,8 +28,8 @@ export default function Home() {
                         <p className='mt-5'>
                             A 3 anos resolvendo problemas através de códigos <u className='text-accent'>criativos e eficientes</u>
                         </p>
-                        <a className='bg-accent text-white mt-10 inline-block px-14 lg:px-24 py-4 rounded' href="https://wa.me/558491065838">
-                            Falar no whatsapp
+                        <a target="_blank" className='bg-accent hover:bg-accent-dark duration-300 text-white mt-10 px-10 lg:px-14 py-4 rounded flex gap-4 w-fit mx-auto' href="https://wa.me/558491065838">
+                            <img src="/icons/whatsapp.svg" width={22} />Falar no whatsapp
                         </a>
                     </div>
                 </div>
@@ -145,16 +145,16 @@ export default function Home() {
                     </div>
                 </Section>
 
-                <Section id="contato" container={true} background="accent-neutral">
+                <Section paddingY="small" id="contato" container={true} background="accent-neutral">
                     <div className='flex flex-col md:flex-row gap-10 justify-between max-w-screen-xl mx-auto items-center text-gray-500 px-10'>
                         <h2 className='text-4xl font-bold mb-3 max-w-sm text-gray-700 text-center md:text-left'> Precisa de algo? Fala comigo! 😉</h2>
                         <div className='flex flex-col text-center'>
-                            <a className='bg-accent text-white inline-block px-14 lg:px-24 py-4 rounded' href="https://wa.me/558491065838">
-                                Falar no whatsapp
+                            <a target="_blank" className='bg-accent hover:bg-accent-dark duration-300 text-white mt-10 px-10 lg:px-14 py-4 rounded flex gap-4 w-fit mx-auto' href="https://wa.me/558491065838">
+                                <img src="/icons/whatsapp.svg" width={22} />Falar no whatsapp
                             </a>
                             ou
                             <a href='mailto:contato@claudson.dev'>
-                                Me manda um email <b>contato@claudson.dev</b>
+                               contato@claudson.dev
                             </a>
                         </div>
                     </div>

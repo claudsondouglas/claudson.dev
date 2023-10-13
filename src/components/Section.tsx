@@ -16,7 +16,8 @@ const variants = tv({
         },
         paddingY: {
             true: "py-20",
-            false: "py-0"
+            false: "py-0",
+            small: "py-10"
         }
     },
     defaultVariants: {

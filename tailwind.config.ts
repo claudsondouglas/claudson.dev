@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
+    './public/icons/**/*.{svg}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -21,7 +22,8 @@ const config: Config = {
         },
         accent: {
           DEFAULT: "#2D9F6E",
-          neutral: "#E8F8EF"
+          neutral: "#E8F8EF",
+          dark: "#1F6F4B"
         },
         body: {
           dark: "#1F1F1F",
