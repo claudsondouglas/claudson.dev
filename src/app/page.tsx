@@ -5,7 +5,7 @@ import { Metadata } from "next"
 
 
 export const metadata: Metadata = {
-    title: 'Claudson',
+    title: 'Claudson - Desenvolvedor',
     description: 'A 3 anos resolvendo problemas através de códigos criativos e eficientes',
     openGraph: {
         title: "Portifólio",
