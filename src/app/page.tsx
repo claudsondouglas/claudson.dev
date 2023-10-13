@@ -136,7 +136,7 @@ export default function Home() {
                         <Card
                             image="/projetos/delivre.png"
                             title="Delivre"
-                            description="solução digital de cardápio projetada para ajudar pequenas empresas a melhorar a eficiência de seus processos de atendimento ao cliente" c
+                            description="solução digital de cardápio projetada para ajudar pequenas empresas a melhorar a eficiência de seus processos de atendimento ao cliente"
                             cta={{
                                 href: "https://delivre.claudson.dev",
                                 text: "🌎 delivre.claudson.dev"
