@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { HtmlHTMLAttributes, ReactNode } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const variants = tv({
@@ -26,13 +26,14 @@ const variants = tv({
     }
 })
 
-export default function Section({ children, background, spaceBottom, container, id, paddingY }: { children: ReactNode, container?: boolean, id?: string } & VariantProps<typeof variants>) {
+export default function Section({ children, background, spaceBottom, container, paddingY, ...props }: { children: ReactNode, container?: boolean, id?: string } & VariantProps<typeof variants> & HtmlHTMLAttributes<HTMLElement>) {
     return (
-        <section id={id} className={variants({
+        <section {...props} className={variants({
             spaceBottom,
             background,
             container,
-            paddingY
+            paddingY,
+            class: props.className
         })}>
             { container == true ? <div className='max-w-screen-xl mx-auto'>{children}</div> : children }
         </section>
