@@ -6,9 +6,13 @@ a {
   @apply text-accent;
 }
 
+#navbar[data-full="false"] a {
+  color: white;
+}
+
 #navbar {
   a {
-    @apply text-primary-lightness;
+    @apply text-black;
   }
 
   & ul li a {
@@ -20,83 +24,85 @@ a {
   }
 }
 
-
-
-/* Marquee styles */
-.marquee {
-  --gap: 1rem;
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  user-select: none;
-  gap: var(--gap);
+* {
+  box-sizing: border-box;
 }
 
-.marquee__content {
-  flex-shrink: 0;
+
+.scroller {
+  max-width: 1200px;
+}
+
+.scroller__inner {
+  padding-block: 1rem;
   display: flex;
-  justify-content: space-around;
-  gap: var(--gap);
-  min-width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
 }
 
 @keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
   to {
-    transform: translateX(calc(-100% - var(--gap)));
+    transform: translate(calc(-50% - 0.5rem));
   }
 }
 
-/* Pause animation when reduced-motion is set */
-@media (prefers-reduced-motion: reduce) {
-  .marquee__content {
-    animation-play-state: paused !important;
-  }
+/* general styles */
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%);
+  --clr-primary-800: hsl(217, 33%, 17%);
+  --clr-primary-900: hsl(218, 33%, 9%);
 }
 
-/* Enable animation */
-.enable-animation .marquee__content {
-  animation: scroll 10s linear infinite;
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
 }
 
-/* Reverse animation */
-.marquee--reverse .marquee__content {
-  animation-direction: reverse;
+.tag-list li {
+  @apply text-3xl lg:text-5xl font-semibold;
+  padding: 1rem;
 }
 
-/* Pause on hover */
-.marquee--hover-pause:hover .marquee__content {
-  animation-play-state: paused;
-}
-
-/* Attempt to size parent based on content. Keep in mind that the parent width is equal to both content containers that stretch to fill the parent. */
-.marquee--fit-content {
-  max-width: fit-content;
-}
-
-/* A fit-content sizing fix: Absolute position the duplicate container. This will set the size of the parent wrapper to a single child container. Shout out to Olavi's article that had this solution 👏 @link: https://olavihaapala.fi/2021/02/23/modern-marquee.html  */
-.marquee--pos-absolute .marquee__content:last-child {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Enable position absolute animation on the duplicate content (last-child) */
-.enable-animation .marquee--pos-absolute .marquee__content:last-child {
-  animation-name: scroll-abs;
-}
-
-@keyframes scroll-abs {
-  from {
-    transform: translateX(calc(100% + var(--gap)));
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-* {
-  box-sizing: border-box;
+/* for testing purposed to ensure the animation lined up correctly */
+.test {
+  background: red !important;
 }

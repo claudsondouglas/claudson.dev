@@ -5,6 +5,7 @@ import SocialList from "@/components/SocialList"
 import Header from "@/components/organisms/Header"
 import PresentationCard from "@/components/organisms/PresentationCard"
 import { Metadata } from "next"
+import Script from "next/script"
 
 
 export const metadata: Metadata = {
@@ -18,14 +19,16 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
+
     return (
         <>
-            <Header full/>
+            <Header full />
 
+            <Marquee />
 
             <main className="">
-                <Section id="sobre" container={true} spaceBottom={false} paddingY={false} className="bg-primary pb-20">
-                    <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-10 bg-white lg:rounded-2xl overflow-hidden p-10 lg:p-20 py-14 lg:-mt-[150px] relative z-40'>
+                <Section id="sobre" container={true} spaceBottom={false} paddingY={true} className="bg-primary">
+                    <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-10 bg-white lg:rounded-2xl overflow-hidden p-10 lg:p-20 py-14 relative z-40'>
                         <div className="md:col-span-2 lg:col-span-4">
                             <h2 className="text-4xl font-bold uppercase">
                                 3+ ANOS DE EXPERIÊNCIA<br />

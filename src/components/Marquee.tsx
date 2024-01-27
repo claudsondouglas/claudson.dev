@@ -1,21 +1,61 @@
-export default function Marquee() {
-    return (
-        <div className="bg-neutral-900 text-white">
-            <section className="marquee enable-animation py-3">
-                <ul className="marquee__content">
-                    <span className="text-3xl lg:text-5xl font-bold">DESENVOLVEDOR</span>
-                    <span className="text-3xl lg:text-5xl font-bold">UX & UI</span>
-                    <span className="text-3xl lg:text-5xl font-bold">CIÊNCIA DE DADOS</span>
-                    <span className="text-3xl lg:text-5xl font-bold">DEVOPS</span>
-                </ul>
+"use client";
 
-                <ul aria-hidden="true" className="marquee__content">
-                    <span className="text-3xl lg:text-5xl font-bold">DESENVOLVEDOR</span>
-                    <span className="text-3xl lg:text-5xl font-bold">UX & UI</span>
-                    <span className="text-3xl lg:text-5xl font-bold">CIÊNTISTA DE DADOS</span>
-                    <span className="text-3xl lg:text-5xl font-bold">DEVOPS</span>
+import { Asterisk } from "lucide-react";
+import { useEffect } from "react";
+
+export default function Marquee() {
+    useEffect(() => {
+        const scrollers = document.querySelectorAll(".scroller");
+
+        // If a user hasn't opted in for recuded motion, then we add the animation
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            addAnimation();
+        }
+
+        function addAnimation() {
+            scrollers.forEach((scroller: any) => {
+                // add data-animated="true" to every `.scroller` on the page
+                scroller.setAttribute("data-animated", true);
+
+                // Make an array from the elements within `.scroller-inner`
+                const scrollerInner: any = scroller.querySelector(".scroller__inner");
+                const scrollerContent = Array.from(scrollerInner.children);
+
+                // For each item in the array, clone it
+                // add aria-hidden to it
+                // add it into the `.scroller-inner`
+                scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    duplicatedItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicatedItem);
+                });
+            });
+        }
+
+    }, [])
+
+    return (
+        <div className="bg-accent flex justify-center items-center">
+            <div className="scroller" data-speed="slow">
+                <ul className="tag-list scroller__inner flex justify-center items-center text-white">
+                    <li>Desenvolvedor</li>
+                    <Asterisk size={48}/>
+                    <li>UX & UI</li>
+                    <Asterisk size={48}/>
+                    <li>Ciêntista de dados</li>
+                    <Asterisk size={48}/>
+                    <li>DevOPS</li>
+                    <Asterisk size={48}/>
+                    <li>Desenvolvedor</li>
+                    <Asterisk size={48}/>
+                    <li>UX & UI</li>
+                    <Asterisk size={48}/>
+                    <li>Ciência de dados</li>
+                    <Asterisk size={48}/>
+                    <li>DevOPS</li>
+                    <Asterisk size={48}/>
                 </ul>
-            </section>
+            </div>
         </div>
     )
 }
