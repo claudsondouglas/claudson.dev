@@ -24,7 +24,7 @@ export default function Marquee() {
                 // For each item in the array, clone it
                 // add aria-hidden to it
                 // add it into the `.scroller-inner`
-                scrollerContent.forEach((item) => {
+                scrollerContent.forEach((item: any) => {
                     const duplicatedItem = item.cloneNode(true);
                     duplicatedItem.setAttribute("aria-hidden", true);
                     scrollerInner.appendChild(duplicatedItem);

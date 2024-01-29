@@ -31,6 +31,7 @@ a {
 
 .scroller {
   max-width: 1200px;
+  user-select: none;
 }
 
 .scroller__inner {

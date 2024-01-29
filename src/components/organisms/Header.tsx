@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import SocialList from "../SocialList";
+import Link from "next/link";
 
 export default function Header({ full = false }: { full?: boolean }) {
     return (
@@ -7,12 +8,13 @@ export default function Header({ full = false }: { full?: boolean }) {
             <nav className='text-black data-[full="false"]:text-white z-20' id="navbar" data-full={full}>
                 <div className='max-w-screen-xl mx-auto flex justify-between py-8 px-10 xl:px-0'>
                     <div className="text-2xl">
-                        <span className='font-bold'><span className="text-accent">{`{}`}</span> claudson</span>.dev
+                        <Link href="/">
+                            <span className='font-bold'><span className="text-accent">{`{}`}</span> claudson</span>.dev
+                        </Link>
                     </div>
                     <div className='flex gap-20'>
                         <ul className='gap-5 hidden lg:flex' id="navbar-menu">
-                            <li className="navbar-item"><a href='/#projetos'>Projetos</a></li>
-                            <li className="navbar-item"><a href='/#medium'>Medium</a></li>
+                            <li className="navbar-item"><a href='/portifolio'>Portifólio</a></li>
                         </ul>
                         <div className='hidden lg:flex'>
                             <SocialList />

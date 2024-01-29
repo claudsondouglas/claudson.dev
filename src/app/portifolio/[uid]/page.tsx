@@ -21,8 +21,8 @@ export default async function Page({ params }: { params: Params }) {
         <>
             <Header />
             <div className="max-w-screen-md mx-auto py-14 md:py-20 px-10 md:px-20 2xl:px-0 text-gray-700">
-                <div className="mb-5">
-                    <Link href={'/'}>Inicio</Link>
+                <div className="mb-5 text-gray-200">
+                    <Link href={'/'}>Inicio</Link> {`/`} <Link href={'/portifolio'}>Portifólio</Link>
                 </div>
                 <PrismicRichText field={page.data.title}
                     components={{
