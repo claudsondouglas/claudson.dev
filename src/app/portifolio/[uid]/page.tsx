@@ -6,7 +6,7 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Header from "@/components/organisms/Header";
 import Link from "next/link";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { DateTime } from "luxon";
 
 type Params = { uid: string };
@@ -19,14 +19,13 @@ export default async function Page({ params }: { params: Params }) {
 
     return (
         <>
-            <Header />
             <div className="max-w-screen-md mx-auto py-14 md:py-20 px-10 md:px-20 2xl:px-0 text-gray-700">
                 <div className="mb-5 text-gray-200">
                     <Link href={'/'}>Inicio</Link> {`/`} <Link href={'/portifolio'}>Portifólio</Link>
                 </div>
                 <PrismicRichText field={page.data.title}
                     components={{
-                        heading1: ({ children }) => <h1 className="text-4xl font-bold mb-5">{children}</h1>
+                        heading1: ({ children }) => <h1 className="text-3xl md:text-4xl font-bold mb-5">{children}</h1>
                     }}
                 />
 
@@ -54,14 +53,53 @@ export default async function Page({ params }: { params: Params }) {
                     }}
                 />
 
+                <div className="my-10">
+                    <h2 className="text-xl font-bold">Objetivo</h2>
+                    <PrismicRichText field={page.data.objective}
+                        components={{
+                            paragraph: ({ children }) => <p className="mb-5">{children}</p>,
+                        }}
+                    />
+                </div>
 
-                <div className="flex justify-between items-center">
+                <div className="my-10">
+                    <h2 className="text-xl font-bold">Desafio</h2>
+                    <PrismicRichText field={page.data.challenges}
+                        components={{
+                            paragraph: ({ children }) => <p className="mb-5">{children}</p>,
+                        }}
+                    />
+                </div>
+
+                <div className="my-10">
+                    <h2 className="text-xl font-bold">Solução</h2>
+                    <PrismicRichText field={page.data.solution}
+                        components={{
+                            paragraph: ({ children }) => <p className="mb-5">{children}</p>,
+                        }}
+                    />
+                </div>
+
+                <div className="my-10">
+                    <h2 className="text-xl font-bold">Tecnologias utilizadas</h2>
+                    <PrismicRichText field={page.data.technologies}
+                        components={{
+                            paragraph: ({ children }) => <p className="mb-5">{children}</p>,
+                        }}
+                    />
+                </div>
+
+                <div>
+                    <PrismicNextImage field={page.data.imagem} className="w-full" />
+                </div>
+
+                <div className="flex justify-between items-center mt-10">
                     <PrismicNextLink field={page.data.project_link}>
                         Link do projeto
                     </PrismicNextLink>
 
                     <div>
-                     { DateTime.fromISO(page.last_publication_date).toFormat("dd 'de' LLL 'de' yyyy") }
+                        {DateTime.fromISO(page.last_publication_date).toFormat("dd 'de' LLL 'de' yyyy")}
                     </div>
                 </div>
             </div>

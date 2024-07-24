@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 a {
-  @apply text-accent;
+  @apply text-blue-500;
 }
 
 #navbar[data-full="false"] a {

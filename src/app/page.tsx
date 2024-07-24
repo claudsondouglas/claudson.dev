@@ -1,3 +1,4 @@
+import Card from "@/components/Card";
 import { createClient } from "@/prismicio";
 import { ArrowUpRight } from "lucide-react";
 import { Metadata } from "next"
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
     const client = createClient();
+
     const latestBlogPosts = await client.getAllByType('portifolio', {
         fetchOptions: {
             cache: 'default',
@@ -26,13 +28,13 @@ export default async function Home() {
     return (
         <>
             <main className="max-w-screen-xl mx-auto py-20 pb-10 px-10">
-                <div className="max-w-2xl">
-                    <h1 className="text-3xl md:text-5xl font-bold leading-snug">
-                        Olá<br />
-                        Eu sou Claudson<br />
+                <div className="max-w">
+                    <h1 className="text-4xl md:text-7xl font-bold leading-snug">
+                        Olá, mundo<br />
+                        <span className="md:text-8xl">Eu sou <u className="font-extrabold">Claudson</u></span>
                     </h1>
-                    <p className="text-lg md:text-2xl mt-5 md:leading-10">
-                        Sou um programador de sites e sistemas a 4 anos e atualmente trabalho como desenvolvedor na <a className="text-blue-400 bg-blue-50 px-3 hover:underline" href="https://www.websocorro.com.br">WebSocorro</a> e como <span className="bg-accent/5 px-3 text-accent-dark">freelancer</span> nas horas extras.
+                    <p className="text-lg md:text-2xl mt-5 md:leading-10 text-gray-500">
+                        Sou um programador de sites e sistemas a 4 anos e atualmente trabalho como desenvolvedor na <a className="text-blue-400 bg-blue-50 px-3 hover:underline" href="https://www.websocorro.com.br">WebSocorro</a> e como <span className="bg-blue-600/5 px-3 text-blue-800">freelancer</span> nas horas extras.
                     </p>
 
                     <div className="flex flex-col gap-3 mt-10">
@@ -60,7 +62,7 @@ export default async function Home() {
                         </div>
 
                         <div>
-                            <a href="https://wa.me/558491065838" className="inline-flex items-center gap-2 bg-accent text-white px-14 py-3.5 text-lg">
+                            <a href="https://wa.me/558491065838" className="inline-flex items-center gap-2 bg-blue-600 text-white px-14 py-3.5 text-lg">
                                 Whatsapp
                                 <img src="/icons/whatsapp.svg" width={22} />
                             </a>
@@ -68,7 +70,27 @@ export default async function Home() {
                     </div>
                 </div>
 
-                <div className="my-20">
+                <div className="mt-20">
+                    <h2 className="text-2xl font-bold mb-5">Portifólio</h2>
+
+                    <div className='grid lg:grid-cols-3 gap-10'>
+                        {latestBlogPosts.map((document: any, index: number) => (
+                            <Card
+                                key={index}
+                                image={document.data.meta_image.url}
+                                title={document.data.title[0].text}
+                                description={document.data.meta_description} cta={{
+                                    local: true,
+                                    href: '/portifolio/' + document.uid,
+                                    text: "ver projeto"
+                                }}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+
+                <div className="mt-20 mb-10">
                     <h2 className="text-2xl font-bold">Para a WebSocorro</h2>
                     <div className="flex flex-wrap gap-2 my-3">
                         <a href="https://bridge" target="_blank">bridge</a>
@@ -88,8 +110,10 @@ export default async function Home() {
                     </p>
                 </div>
             </main>
-            <footer className="bg-gray-100 px-10 py-20 text-center">
-                &copy; Claudson.dev - portifolio quase nunca atualizado, mas feito com amor e carinho.
+            <footer className="bg-gray-100">
+                <div className="max-w-screen-xl mx-auto text-center lg:text-left px-10 py-14">
+                    &copy; Claudson.dev - portifolio quase nunca atualizado, mas feito com ❤️ e ☕.
+                </div>
             </footer>
         </>
     )

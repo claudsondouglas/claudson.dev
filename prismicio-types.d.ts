@@ -33,6 +33,50 @@ interface PortifolioDocumentData {
   post: prismic.RichTextField;
 
   /**
+   * Objetivo field in *Portifolio*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portifolio.objective
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  objective: prismic.RichTextField;
+
+  /**
+   * Tecnologias field in *Portifolio*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portifolio.technologies
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  technologies: prismic.RichTextField;
+
+  /**
+   * challenges field in *Portifolio*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portifolio.challenges
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  challenges: prismic.RichTextField;
+
+  /**
+   * Solution field in *Portifolio*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portifolio.solution
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  solution: prismic.RichTextField;
+
+  /**
    * Link do projeto field in *Portifolio*
    *
    * - **Field Type**: Link
@@ -42,6 +86,17 @@ interface PortifolioDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   project_link: prismic.LinkField;
+
+  /**
+   * Imagem field in *Portifolio*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portifolio.imagem
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Portifolio*
