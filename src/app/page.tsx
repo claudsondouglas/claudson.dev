@@ -27,8 +27,8 @@ export default async function Home() {
 
     return (
         <>
-            <main className="max-w-screen-xl mx-auto py-20 pb-10 px-10">
-                <div className="max-w">
+            <main className="max-w-screen-xl mx-auto pb-10 px-10">
+                <header className="max-w lg:min-h-screen lg:flex flex-col justify-center pt-20 lg:pt-0">
                     <h1 className="text-4xl md:text-7xl font-bold leading-snug">
                         Olá, mundo<br />
                         <span className="md:text-8xl">Eu sou <u className="font-extrabold">Claudson</u></span>
@@ -62,13 +62,13 @@ export default async function Home() {
                         </div>
 
                         <div>
-                            <a href="https://wa.me/558491065838" className="inline-flex items-center gap-2 bg-blue-600 text-white px-14 py-3.5 text-lg">
+                            <a href="https://wa.me/558491065838" className="flex md:inline-flex items-center justify-center md:justify-start gap-2 bg-blue-600 text-white px-14 py-3.5 text-lg">
                                 Whatsapp
                                 <img src="/icons/whatsapp.svg" width={22} />
                             </a>
                         </div>
                     </div>
-                </div>
+                </header>
 
                 <div className="mt-20">
                     <h2 className="text-2xl font-bold mb-5">Portifólio</h2>
